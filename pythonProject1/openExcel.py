@@ -17,8 +17,6 @@ import re
 # test
 divider = '=====================================\n'
 
-
-
 # 输入文件位置
 # path = input('请输入文件位置：')
 path = r'/Users/yiruwong/Desktop/testfile.xlsx'  # test
@@ -33,31 +31,18 @@ start_time, end_time, t as float：开始时间，结束时间，用时
 sheets_dict as dict: excel文件中所有的工作表，sheets = {'工作表名称': df}
 df as dataframe：Excel中的数据
 '''
-def open_excel(path):
-    # 提取文件名
-    filename = path.split('/')[-1]
-
-    try:
-        print('正在打开文件：%s' % path)
-
-        # 开始计时
-        start_time = time.perf_counter()
-        # 打开文件，返回所有工作表名称
-        sheets_dict = pd.read_excel(path, sheet_name=None)
-
-        # 结束计时，计算用时
-        end_time = time.perf_counter()
-        t = round(end_time - start_time, 2)
-
-        print('%s已打开，用时%s秒\n' % (filename, t))
-    except:
-        # 若文件打开失败，则报错
-        print('%s打开失败\n' % filename)
-        quit()
-
-    return sheets_dict
 
 
-sheets_dict = open_excel(path)
 
-print(sheets_dict)
+
+
+def excel_to_df(path) -> DataFrame:
+    df = pd.read_excel(path, 'test1')
+
+    return df
+
+# test Collection
+# excel_path = r'C:\Users\yiru.wang\PycharmProjects\pythonProject1\test.xlsx'
+# data = excel_to_df(excel_path)
+#
+# print(data)

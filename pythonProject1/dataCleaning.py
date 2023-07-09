@@ -10,16 +10,12 @@
 # 数据分析包
 import pandas as pd
 from pandas import DataFrame
-import numpy as np
-import openpyxl
 
 # 时间包
-from dateutil.parser import parse
-from datetime import datetime
 
 # 自定义方法包
 from openExcel import excel_to_df
-from input_to_boolean import input_to_boolean
+from pythonProject1.input_to_boolean import input_to_boolean
 
 # test Collection
 excel_path = r'C:\Users\yiru.wang\PycharmProjects\pythonProject1\test.xlsx'
